@@ -1,0 +1,53 @@
+<title>
+
+
+  My A-Frame Scene</title>
+
+<head>
+  <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+  <script>
+    AFRAME.registerComponent('set-sky', {
+      schema: {
+        default: ''
+      },
+      init() {
+        var scene = document.querySelector("a-scene");
+        var vid = document.getElementById("video");
+
+
+        this.el.addEventListener('click', () => {
+
+
+          if (this.data == "play") {
+            vid.setAttribute('src', 'assets/test3.mp4');
+            vid.play();
+          } else if (this.data == "pause") {
+            vid.pause();
+          }
+        });
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <a-assets>
+    <img id="volvo" src="assets/volvo.png">
+    <video id="video" loop></video>
+  </a-assets>
+
+  <a-scene stats>
+    <a-camera position="0 2 4">
+      <a-cursor color="#4CC3D9" fuse="false"></a-cursor>
+    </a-camera>
+
+    <a-image src="#volvo" position="0 3.227 0" scale="2 2 2"></a-image>
+
+
+    <a-sphere color="#F44336" radius="1" position="-4 2 0" set-sky="play"></a-sphere>
+
+    <a-sphere color="#FFEB3B" radius="1" position="4 2 0" set-sky="pause"></a-sphere>
+
+    <a-videosphere src="#video" rotation="0 180 0"></a-videosphere>
+  </a-scene>
+</body>

@@ -1,0 +1,23 @@
+<title>My A-Frame Scene</title>
+
+<head>
+  <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
+  <script src="https://rawgit.com/oscarmarinmiro/aframe-video-controls/master/dist/aframe-video-controls.min.js"></script>
+</head>
+
+<body>
+  <a-scene stats>
+    <a-assets>
+      <video id="video" src="assets/test.mp4"></video>
+    </a-assets>
+
+    <a-camera position="0 0 5">
+      <a-cursor id="cursor" color="yellow"></a-cursor>
+    </a-camera>
+
+    <a-videosphere src="#video" rotation="0 180 0"></a-videosphere>
+
+    <a-entity video-controls="src:#video"></a-entity>
+
+  </a-scene>
+</body>

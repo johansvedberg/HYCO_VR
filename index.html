@@ -9,19 +9,36 @@
   <script src="color-box.js"></script>
   <script src="shelf.js"></script>
   <script src="item.js"></script>
-
+  <script src="https://rawgit.com/oscarmarinmiro/aframe-video-controls/master/dist/aframe-video-controls.min.js"></script>
 </head>
 
 <body>
   <a-scene stats>
     <a-assets>
-      <a-asset-item id="man" src="assets/male.dae"></a-asset-item>
-      <a-asset-item id="woman" src="assets/female.dae"></a-asset-item>
+
       <a-asset-item id="shelf" src="assets/shelf.dae"></a-asset-item>
-      <a-asset-item id="table" src="assets/table.dae"></a-asset-item>
-      <img id="lindex" src="assets/lindex.gif">
-      <img id="shirt" src="assets/shirt.png">
-      <video id="video" src="https://ucarecdn.com/bcece0a8-86ce-460e-856b-40dac4875f15/" autoplay loop crossorigin></video>
+      <img id="cherry" src="assets/cherry.jpg">
+      <a-asset-item id="car-obj" src="assets/car/lamborghini-aventador-pbribl.obj"></a-asset-item>
+      <a-asset-item id="car-mtl" src="assets/car/lamborghini-aventador-pbribl.mtl"></a-asset-item>
+
+
+      <!--
+        <a-asset-item id="man" src="assets/male.dae"></a-asset-item>
+        <a-asset-item id="man" src="assets/male.dae"></a-asset-item>
+        <a-asset-item id="brainstem" src="https://cdn.aframe.io/test-models/models/brainstem/BrainStem.gltf">
+
+        <a-asset-item id="woman" src="assets/female.dae"></a-asset-item>
+        <img id="lindex" src="assets/lindex.gif">
+        <img id="shirt" src="assets/shirt.png">
+        <video id="video" src="assets/test3.mp4" autoplay loop crossorigin webkit-playsinline></video>
+
+
+            --->
+
+
+
+
+
     </a-assets>
 
     <a-camera position="-1.448 0 2.569">
@@ -55,7 +72,8 @@
 
     <!--  <a-entity collada-model="#ball" id="ball" scale ="0.1 0.1 0.1" rotation = " 0 -90 0" position = "2.619 1.036 -1.021"> </a-entity>   --->
 
-    <a-entity collada-model="#table"></a-entity>
+
+
 
     <a-entity shelf>
       <!--
@@ -81,7 +99,7 @@
     </a-entity>
 
 
-
+    <!--
     <a-entity item id="item1">
       <a-image id="product" src="#shirt" position="-1.212 1.333 -0.801" material="">
         <a-animation attribute="scale" to="2 2 2" begin="notClicked"> </a-animation>
@@ -102,16 +120,26 @@
         <a-animation attribute="scale" to="1 1 1" begin="notClicked" dur="2000"> </a-animation>
         <a-animation attribute="scale" to="0 0 0" begin="clicked" dur="2000"> </a-animation>
       </a-text>
-      <!--
+      --->
+    <!--
         <a-curvedimage src="#lindex" height="3.0" radius="5.7" theta-length="120" rotation="0 124.561 0" scale="0.6 0.6 0.6" position="-0.044 2.398 -0.139"></a-curvedimage>
-          --->
-      <a-sky src="assets/cherry.jpg" rotation="0 -130 0"></a-sky>
-      <!--
-<a-videosphere src="#video" rotation="0 180 0"></a-videosphere>
-             --->
-      <a-light type="directional" color="#fff" intensity="0.3" position="-1 2 1"></a-light>
-      <a-light type="ambient" color="#fff"></a-light>
+
+      <a-videosphere src="#video" rotation="0 180 0"></a-videosphere>
+
+      <a-entity video-controls="src:#video"></a-entity>
+  --->
+
+
+    <a-entity obj-model="obj: #car-obj; mtl: #car-mtl"></a-entity>
+
+    <a-sky src="#cherry" rotation="0 -130 0"></a-sky>
+
+
+
+    <a-light type="directional" color="#fff" intensity="0.3" position="-1 2 1"></a-light>
+    <a-light type="ambient" color="#fff"></a-light>
   </a-scene>
 </body>
 
 </html>
+tml>
